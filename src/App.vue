@@ -25,7 +25,7 @@ const addCity= () => {
 }
 const getWeather = () => {
   if (choosenCity) {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${choosenCity}&appid=7914d5a440960cfd5df3bd0388a7ad0f`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${choosenCity.value}&appid=7914d5a440960cfd5df3bd0388a7ad0f`)
   .then(response => {
     weather.value = response.data.main
   })
@@ -47,12 +47,12 @@ const getWeather = () => {
     <h1>-----</h1>
     {{ cities }}
     <h1>-----</h1>
-    {{ choosencity }}
+    {{ choosenCity }}
     <h1>{{ url }}</h1>
     <div class="wrapper">
       <div class="city-choose">
         <h2>Choose city</h2>
-        <select v-model="choosencity">
+        <select v-model="choosenCity">
           <option disabled>Choose city</option>
           <option v-for="c in cities" v-bind:key="c">{{ c }}</option>
         </select>
