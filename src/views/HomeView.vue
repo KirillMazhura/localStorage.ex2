@@ -3,6 +3,6 @@
 
 <template>
   <main>
-    <TheWelcome />
+    123
   </main>
 </template>
